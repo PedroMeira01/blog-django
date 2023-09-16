@@ -6,7 +6,6 @@ from .views import UserViewSet, PostViewSet, KeywordViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'posts', PostViewSet)
-router.register(r'keywords', KeywordViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
