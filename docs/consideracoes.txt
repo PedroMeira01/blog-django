@@ -1,0 +1,38 @@
+O que fazer para mitigar possíveis erros e controlar os possíveis erros recebidos da API?
+
+Resposta:
+
+    - Realizar o tratamento de exceções, desta forma teriamos controle sobre possíveis erros e exceções que venham a ocorrer no momento em que determinadas rotas sejam requisitadas. Além disso, os erros poderiam ser devidamente tratados de forma que não interrompessem ou retornassem respostas indesejadas para os usuários.
+    - Testes automatizados. Através dos testes automatizados conseguimos prever com antecedência possíveis erros que possam vir a ocorrer em determinados fluxos da aplicação e assim tratá-los e resolvê-los com antecedência.
+
+Quais boas práticas são aplicadas em banco de dados e no código para garantir
+performance?
+
+    Para garantir performance tanto no banco de dados, algumas ações coerentes seriam:
+    
+        - Aplicar as regras de normalização de dados na modelagem do banco de dados.
+        - Garantir que a aplicação execute consultas SQL otimizadas.
+        - Evitar situações de N+1 Problem, onde para uma consulta, N outras são executadas.
+        - Utilizar paginação para diluir o volume de dados requisitado ao banco a cada solicitação de leitura.
+
+Como garantir segurança para as APIs do sistema?
+
+    Alguns cuidados importantes a serem tomados são:
+
+    - Garantir a proteção do sistema contra SQL Injection
+    - Garantir a proteção do sistema contra ataques CSRF
+    - Registrar as atividades da API em logs para monitorar ações suspeitas
+
+    Soluções como autenticação JWT e autorização e validação e sanitização de dados já estão sendo aplicadas na API.
+
+Como trabalhar com simultaneidade se milhares de requisições forem solicitadas
+simultaneamente?
+
+    Algumas soluções interessantes seriam:
+
+    - Utilizar um Load Balancer para distruibuir as requisições paa diferentes instâncias da aplicação. (Ferramentas como Docker e Kubernetes podem auxiliar nesse processo).
+    - Escalabilidade horizontal, alocando recursos para diferentes instâncias em diferentes servidores.
+    - Otimização do código, aplicar sempre boas práticas para evitar problemas de perfomance que venham causar possíveis gargalos na aplicação. 
+    - Utilizar CDN para que os arquivos estáticos possam ser entregues de servidores mais próximos ao usuário.
+    - Utilizar sistemas de cache.
+    - Adotar uma arquitetura de microserviços.
